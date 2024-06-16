@@ -1,0 +1,126 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 100;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    display: none;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+nav ul li {
+    margin: 0.5em 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+nav ul li a:hover {
+    background-color: #3700b3;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+main h2 {
+    text-align: center;
+    font-weight: 100;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    padding: 0.5em;
+    text-align: center;
+    font-weight: 400;
+}
+
+footer {
+    background-color: #6200ea;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+    font-weight: 100;
+}
+
+/* Show the hamburger button on mobile view */
+@media (max-width: 767px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu ul {
+        display: none;
+    }
+
+    .nav-menu ul.show {
+        display: flex;
+    }
+}
