@@ -1,9 +1,11 @@
+/* Base styles */
 body {
     font-family: 'Roboto', sans-serif;
     color: #333333;
     background-color: #FFFFFF;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 header,
@@ -14,21 +16,314 @@ footer {
     padding: 10px 0;
 }
 
-h1,
-h2,
-h3 {
-    font-family: 'Playfair Display', serif;
+header h1 {
+    margin: 0;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+    /* Distinct hover color */
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#nav-links {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .hamburger {
+        display: flex;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #0056b3;
+    }
+
+    #nav-links li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    /* Cross icon transformation */
+    .hamburger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
 }
 
 main {
     padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #0056b3;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #004494;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
     margin-bottom: 20px;
+}
+
+a {
+    color: #0056b3;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFD700;
+    /* Distinct hover color */
 }
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.hero-text h2 {
+    color: #FFD700;
+    /* Distinct color for the heading */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input,
+form textarea,
+form button {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #0056b3;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #FFD700;
+    /* Distinct hover color */
+    color: #333333;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+figure {
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    padding: 10px;
+    text-align: center;
+    font-weight: 400;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 600px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 20px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-text {
+        padding: 40px;
+    }
+
+    .hero-text h2 {
+        font-size: 3em;
+    }
+
+    .hero-text p {
+        font-size: 1.2em;
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 1024px) {
+    main {
+        padding: 40px;
+        max-width: 900px;
+        /* Adjusted from 1000px to 900px */
+    }
+
+    section {
+        margin-bottom: 60px;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    h3 {
+        font-size: 2em;
+    }
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    /* Add space between team members */
+}
+
+.team-member img {
+    border-radius: 50%;
+    /* Optional: Make the image round */
+    width: 150px;
+    /* Adjust the size as needed */
+    height: 150px;
+    /* Adjust the size as needed */
+    margin-bottom: 15px;
+    /* Space between image and text */
+}
+
+.team-member h4 {
+    margin: 10px 0 5px 0;
+    /* Space around the name */
+}
+
+.team-member p {
+    margin: 5px 0;
+    /* Space around the role and description */
+}
+
+form textarea {
+    margin-bottom: 20px;
+    /* Add space between the message box and the submit button */
+}
+
+form button {
+    margin-top: 20px;
+    /* Ensure there is space above the submit button as well */
 }

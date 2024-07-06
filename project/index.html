@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Chronicles</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="description"
+        content="Welcome to Wanderlust Chronicles, your ultimate guide to exploring the world's most breathtaking travel destinations. Discover tips, guides, and stories to inspire your next adventure.">
+    <meta name="author" content="Ka Kan Ho">
+</head>
+
+<body>
+    <header>
+        <h1>Wanderlust Chronicles</h1>
+        <nav>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <picture>
+                <source media="(max-width: 599px)" srcset="images/beautiful_travel_destination_mobile.jpg">
+                <source media="(min-width: 600px)" srcset="images/beautiful_travel_destination.jpg">
+                <img src="images/beautiful_travel_destination.jpg" alt="Beautiful travel destination" loading="lazy">
+            </picture>
+            <div class="hero-text">
+                <h2>Discover Your Next Adventure</h2>
+                <p>Join us as we explore the world's most breathtaking destinations and uncover hidden gems.</p>
+            </div>
+        </section>
+        <section>
+            <h2>Welcome to Wanderlust Chronicles</h2>
+            <p>Discover the world through our travel stories, tips, and guides. Our mission is to inspire you to explore
+                new places, experience different cultures, and embark on unforgettable adventures.</p>
+        </section>
+        <section>
+            <h3>Latest Posts</h3>
+            <article>
+                <h4>Exploring the Hidden Gems of Hong Kong</h4>
+                <p>Hong Kong is more than just a bustling metropolis. Discover the hidden gems that make this city
+                    unique. <a href="post1.html">Read more</a></p>
+            </article>
+            <article>
+                <h4>A Day Trip to Lantau Island</h4>
+                <p>Experience the natural beauty and cultural heritage of Lantau Island. From the Big Buddha to serene
+                    beaches, there's much to explore. <a href="post2.html">Read more</a></p>
+            </article>
+        </section>
+        <section>
+            <h3>Featured Destinations</h3>
+            <article>
+                <h4>Hong Kong</h4>
+                <p>Explore the vibrant city of Hong Kong, known for its impressive skyline, rich cultural heritage, and
+                    diverse culinary scene. <a href="hongkong.html">Learn more</a></p>
+            </article>
+            <article>
+                <h4>Taipei, Taiwan</h4>
+                <p>Discover the bustling city of Taipei, famous for its night markets, historical sites, and modern
+                    architecture. <a href="taipei.html">Learn more</a></p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Ka Kan Ho, Hong Kong</p>
+        <p id="lastModified"></p>
+    </footer>
+    <script src="scripts/main.js" defer></script>
+</body>
+
+</html>
