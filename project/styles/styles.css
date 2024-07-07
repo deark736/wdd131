@@ -327,3 +327,7 @@ form button {
     margin-top: 20px;
     /* Ensure there is space above the submit button as well */
 }
+
+body, form input, form textarea, form button {
+    font-family: 'Roboto', sans-serif; /* Ensure consistent font across all elements */
+}
