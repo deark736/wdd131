@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupHamburgerMenu();
     loadDestinations();
     updateFooter();
+    loadFormData();
+    setupFormSubmission();
 });
 
 function setupHamburgerMenu() {
@@ -80,6 +82,38 @@ function updateFooter() {
 
     if (lastModifiedElement) {
         lastModifiedElement.textContent = `Last Modified: ${document.lastModified}`;
+    }
+}
+
+// Function to load form data from localStorage
+function loadFormData() {
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    const messageField = document.getElementById('message');
+
+    if (nameField && emailField && messageField) {
+        nameField.value = localStorage.getItem('name') || '';
+        emailField.value = localStorage.getItem('email') || '';
+        messageField.value = localStorage.getItem('message') || '';
+    }
+}
+
+// Function to set up form submission event
+function setupFormSubmission() {
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            localStorage.setItem('name', name);
+            localStorage.setItem('email', email);
+            localStorage.setItem('message', message);
+
+            form.submit(); // Redirect to confirmation.html
+        });
     }
 }
 
